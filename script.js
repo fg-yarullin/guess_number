@@ -159,7 +159,7 @@ document.getElementById('btnOver').addEventListener('click', function () {
             answerField.innerText = answerPhrase;
             gameRun = false;
         } else {
-            minValue = answerNumber - 1;
+            minValue = answerNumber + 1;
             console.log(' minValue = ' + minValue + ' maxValue = ' + maxValue);
             answerNumber  = Math.floor((minValue + maxValue) / 2);
             answer = !!spellNumber(answerNumber) ? spellNumber(answerNumber) : answerNumber;
@@ -188,7 +188,7 @@ document.getElementById('btnLess').addEventListener('click', function () {
             answerField.innerText = answerPhrase;
             gameRun = false;
         } else {
-            maxValue = answerNumber + 1;
+            maxValue = answerNumber - 1;
             answerNumber = Math.floor((maxValue + minValue) / 2);
             console.log(' minValue = ' + minValue + ' maxValue = ' + maxValue);
             answer = !!spellNumber(answerNumber) ? spellNumber(answerNumber) : answerNumber;
