@@ -1,0 +1,31 @@
+.alert {
+    padding: 0;
+}
+
+.close {
+    line-height: 0%;
+    padding: 0;
+    width: 14px;
+    font-size: 14px;
+}
+
+.close:focus {
+    outline: 0 !important;
+}
+
+.game-card {
+    height: 100vh;
+    font-family: 'Open Sans', monospace;
+}
+
+#failed_min, #failed_max {
+    font-size: 13px;
+    margin: 0;
+}
+
+input {
+    text-align: center;
+    float: right;
+    margin-right: 15px;
+}
+

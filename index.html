@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Угадайка</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+</head>
+<body>
+<div class="container">
+    <div class="row game-card align-items-center">
+        <div class="col col-md-4 offset-md-4" id="enterNumbers">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h4 class="m-0">Выбор чисел для игры</h4>
+                </div>
+                <div class="card-body">
+                    <form">
+                        <p>
+                          <label for="min">Минимальное число </label>
+                          <input type="text" id="inputMin" name="min" maxlength="4"size="8"/>
+                          <div class="alert alert-danger alert-dismissible alert-important mt-3 d-none" role="alert" id="minFailedAlert">
+                                <span id="failed_min">Число должно быть не меньше &minus;1000</span>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true" style="color: red; font-weight: 600;">&times;</span>
+                                </button>
+                          </div>
+                        </p>
+                        <p>
+                          <label for="max">Максимальное число</label>
+                          <input type="text" id="inputMax" name="max" maxlength="3" size="8"/>
+                          <div class="alert alert-danger alert-dismissible alert-important mt-3 d-none" role="alert" id="maxFailedAlert">
+                            <span id="failed_max">Число должно быть не больше 1000</span>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true" style="color: red; font-weight: 600;">&times;</span>
+                            </button>
+                      </div>
+                        </p>
+                      </form>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-success" id="startGame">Начать игру</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col col-md-4 offset-md-4 d-none" id="guessNumber">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h4 class="m-0">Загадайте число</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row no-gutters">
+                        <div class="col">
+                            <h5>Загадайте число</h5>
+                            <h5>от <span id="leftEdge">0</span> до <span id="rightEdge">100</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-success" id="goOn">Вперед!</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col col-md-4 offset-md-4 d-none" id="game">
+            <div class="card text-center">
+                <div class="card-header">
+                    <p class="m-0">Вопрос №<span id="orderNumberField">5</span></p>
+                </div>
+                <div class="card-body">
+                    <div class="row no-gutters">
+                        <div class="col">
+                            <h3 class="card-title m-0"><span id="answerField">Вы загадали число 5?</span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="btn-group">
+                        <button class="btn btn-info" id="btnLess">&#129047;<br>меньше</button>
+                        <button class="btn btn-success btn-lg" id="btnEqual">Верно!</button>
+                        <button class="btn btn-info" id="btnOver">больше<br>&#129045;</button>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-link" id="btnRetry">Заново</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
